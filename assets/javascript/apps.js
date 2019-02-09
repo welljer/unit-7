@@ -139,7 +139,7 @@ function getNextArrival(time, frequency)
 
 
 
-// Calulates and returns how many minutes away next train is.
+// Calculates and returns how many minutes away next train is.
 function getMinutesAway(time)
 {
 	var minutesAway = Math.round(getNextArrival(time).diff(moment(),"minutes",true));
