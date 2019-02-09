@@ -17,4 +17,4 @@ how many minutes remain until they arrive at their station.
 
 ## Demo
 
-[link to project](https://github.com/welljer/unit-7)
+[link to project](https://welljer.github.io/unit-7/)
