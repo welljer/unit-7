@@ -144,7 +144,7 @@ function displayTrainSchedule()
                 "data-placement" : "left",
                 "title" : "Update"
             });
-            newDiv.html("<span class='glyphicon glyphicon-edit pop'></span>");
+            newDiv.html("<span class='far fa-edit'></span>");
             newTableRow.append($("<td>").html(newDiv));
 
             var newDiv = $("<div>") //$("<button>")
@@ -156,7 +156,7 @@ function displayTrainSchedule()
                 "data-placement" : "left",
                 "title" : "Remove"
             });
-            newDiv.html("<span class='glyphicon glyphicon-trash pop'></span>");
+            newDiv.html("<span class='fas fa-trash-alt'></span>");
             newTableRow.append($("<td>").html(newDiv));
 
             $("#schedule").append(newTableRow);

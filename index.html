@@ -5,95 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
     <!--JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- fontAwesome -->
+    <script src="https://kit.fontawesome.com/4b6ba4c1ae.js"></script>
     <!--moment JS file  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
     <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
     <!-- custom css -->
-    <link rel="stylesheet" type="type/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Train Time!</title>
 </head>
 <body>
-<div class="container">
-		<!--jumbotron-->
-    <div class="jumbotron text-center" id="jumbo">
-        <h1>Train Schedule</h1>
-        <h2 id="current-time"></h2>
-    </div>
-    
-    <div class="panel panel-info" id="schedule-panel">
-        <div class="panel-heading">
-            <h1 class="panel-title">Current Train Schedule</h1>
-        </div>
-            <div class="panel-body">
-                <!-- .table-striped alternates table row colors -->
-                <table class="table table-striped"> 
-                    <thead>
-                        <tr>
-                            <th>Train Name</th>
-                            <th>Destination</th>
-                            <th>Frequency (min)</th>
-                            <th>Next Arrival</th>
-                            <th>Minutes Away</th>
-                            <th><span class="glyphicon glyphicon-edit"></span></th>
-                            <th><span class="glyphicon glyphicon-trash"></span></th>
-                        </tr>
-                    </thead>
-                    <tbody id="schedule">
-                    </tbody>
-                </table>
-                
-                <div class="text-center">
-                
-                    <button class="btn btn-info" id="add-train-btn" type="submit">Add Train</button>
-                </div>
-                
+    <div class="container">
+            <!--jumbotron-->
+            <div class="jumbotron text-center" id="jumbo">
+                <h1>Train Schedule</h1>
+                <h2 id="current-time"></h2>
             </div>
-    </div>
-    
-    
-    <div class="panel panel-info" id="add-panel">
-        
-        <div class="panel-heading">
-            <h1 class="panel-title" id="add-title">Add Train</h1>
-        </div>
-        
-        <div class="panel-body">
-            <form>
-                <div class="form-group">
-                      <label for="name">Train Name</label>
-                      <input class="form-control" id="name" type="text">
-                </div>
             
-                <div class="form-group">
-                      <label for="destination">Destination</label>
-                      <input class="form-control" id="destination" type="text">
+            <div class="panel panel-info" id="schedule-panel">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Current Train Schedule</h1>
                 </div>
-             
-                 <div class="form-group">
-                    <label for="time">First Train Time (hh:mm military time)</label>
-                    <input class="form-control" id="time" type="text">
-                </div>  
-             
-                 <div class="form-group">
-                      <label for="frequency">Frequency (minutes)</label>
-                      <input class="form-control" id="frequency" type="number" min="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                    </div>    
-           
-                    <button class="btn btn-info" id="submit-btn" type="submit">Submit</button>
-                    <button class="btn btn-info" id="update-btn" type="submit">Update</button>
-                    <button class="btn btn-info" id="close-btn" type="submit">Close</button>
-          </form>
+                    <div class="panel-body">
+                        <!-- .table-striped alternates table row colors -->
+                        <table class="table table-striped"> 
+                            <thead>
+                                <tr>
+                                    <th>Train Name</th>
+                                    <th>Destination</th>
+                                    <th>Frequency (min)</th>
+                                    <th>Next Arrival</th>
+                                    <th>Minutes Away</th>
+                                    <th><span class="glyphicon glyphicon-edit"></span></th>
+                                    <th><span class="glyphicon glyphicon-trash"></span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="schedule">
+                            </tbody>
+                        </table>
+                        
+                    </div>
+            </div>
+            
+            
+            <div class="panel panel-info" id="add-panel">
+                
+                <div class="panel-heading">
+                    <h1 class="panel-title" id="add-title">Add Train</h1>
+                </div>
+                
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Train Name</label>
+                            <input class="form-control" id="name" type="text">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="destination">Destination</label>
+                            <input class="form-control" id="destination" type="text">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="time">First Train Time (hh:mm military time)</label>
+                            <input class="form-control" id="time" type="text">
+                        </div>  
+                    
+                        <div class="form-group">
+                            <label for="frequency">Frequency (minutes)</label>
+                            <input class="form-control" id="frequency" type="number" min="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                            </div>    
+                
+                            <button class="btn btn-info" id="submit-btn" type="submit">Submit</button>
+                            <button class="btn btn-info" id="update-btn" type="submit">Update</button>
+                            <button class="btn btn-info" id="close-btn" type="submit">Close</button>
+                </form>
+                </div>
         </div>
-</div>
-
-<footer class="container">
-    <div>
-        Special thanks to <a href="https://www.glyphicons.com/">Glypicon</a>
     </div>
+</body>
+<footer class="container2">
     <div>
             &copy; Jeremy Cantwell 
     </div>
@@ -101,5 +96,4 @@
 </footer>
 
 <script src="assets/javascript/apps.js"></script>     
-</body>
 </html>
