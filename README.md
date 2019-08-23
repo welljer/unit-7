@@ -4,7 +4,7 @@ Our app retrieves and manipulates information with Moment.js.
 This website provides up-to-date information about various trains, namely their arrival times and 
 how many minutes remain until they arrive at their station.
 
-![picture of demo](../assets/media/demoPlay.gif)
+![picture of demo](assets/media/demoPlay.gif)
 
 ## Technologies Used
 
